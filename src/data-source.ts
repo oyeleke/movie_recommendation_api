@@ -20,8 +20,8 @@ export const AppDataSource = new DataSource({
 
   synchronize: NODE_ENV === "dev" ? false : false,
 //logging logs sql command on the treminal
-  logging: NODE_ENV === "dev" ? false : false,
+  logging: NODE_ENV === "dev" ? true : false,
   entities: [User, Movie],
-  migrations: [__dirname + "/migration/*.ts"],
+  migrations: [__dirname + "/migration/*.ts", "/Users/timi/web/movie_recommendation_api/migration/1716285585441-movie.ts", "/Users/timi/web/movie_recommendation_api/migration/1716285604793-users.ts"],
   subscribers: [],
 });

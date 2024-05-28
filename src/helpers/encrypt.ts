@@ -7,6 +7,8 @@ dotenv.config();
 const { JWT_SECRET = "" } = process.env;
 export class encrypt {
   static async encryptpass(password: string) {
+    console.log("hereeee");
+    console.log(password);
     return bcrypt.hashSync(password, 12);
   }
   static comparepassword(hashPassword: string, password: string) {

@@ -10,7 +10,7 @@ export class UserController {
     const encryptedPassword = await encrypt.encryptpass(password);
     const user = new User();
     user.name = name;
-    user.email = email;
+     user.email = email;
     user.password = encryptedPassword;
     user.role = role;
 

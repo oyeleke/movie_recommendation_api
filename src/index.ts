@@ -2,6 +2,7 @@ import { AppDataSource } from "./data-source";
 import * as express from "express";
 import * as dotenv from "dotenv";
 import { Request, Response } from "express";
+import { errorHandler } from "./middleware/errorHandler";
 import { userRouter } from "./routes/user.routes";
 import { movieRouter } from "./routes/movie.routes";
 import "reflect-metadata";
@@ -15,6 +16,7 @@ app.use("/auth", userRouter);
 app.use("/api", movieRouter);
 
 app.get("*", (req: Request, res: Response) => {
+  console.log("this is");
   res.status(505).json({ message: "Bad Request" });
 });
 
