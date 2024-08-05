@@ -1,5 +1,5 @@
 import { AppDataSource } from "./data-source";
-import * as express from "express";
+import express from "express";
 import * as dotenv from "dotenv";
 import { Request, Response } from "express";
 import { errorHandler } from "./middleware/errorHandler";
@@ -28,3 +28,5 @@ AppDataSource.initialize()
     console.log("Data Source has been initialized!");
   })
   .catch((error) => console.log(error));
+
+export default app;

@@ -22,8 +22,9 @@ export class UserController {
 
     return res
       .status(200)
-      .json({ message: "User created successfully", token, user });
+      .json({ message: "User created successfully", user });
   }
+
   static async getUsers(req: Request, res: Response) {
     const data = cache.get("data");
     if (data) {
@@ -42,6 +43,7 @@ export class UserController {
       });
     }
   }
+
   static async updateUser(req: Request, res: Response) {
     const { id } = req.params;
     const { name, email } = req.body;
